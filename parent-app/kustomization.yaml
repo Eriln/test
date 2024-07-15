@@ -1,0 +1,4 @@
+resources:
+  - applications/child-app1.yaml
+  - applications/child-app2.yaml
+  - applications/child-app-rollback.yaml

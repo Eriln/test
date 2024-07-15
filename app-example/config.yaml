@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-configmap
+  namespace: default
+data:
+  # Properties file-like syntax
+  config.properties: |
+    key1=toto1
+    key2=value2
+
+  # Plain text
+  example.txt: |
+    This is an example text file.
+    It can span multiple lines.
+
+  # JSON formatted data
+  config.json: |
+    {
+      "key1": "value1",
+      "key2": "value2"
+    }
+
+  # YAML formatted data
+  config.yaml: |
+    key1: value1
+    key2: value2

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: child-app-rollback
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Eriln/test'
+    path: 'app-example'
+    targetRevision: HEAD
+  destination:
+    name: 'test1'
+    namespace: child-app-rollback-namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+
